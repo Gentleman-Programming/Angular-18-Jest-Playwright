@@ -1,59 +1,174 @@
-# AngularTesting
+# Angular Testing Boilerplate
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+![Angular](https://img.shields.io/badge/angular-18+-red)
+![Testing](https://img.shields.io/badge/testing-jest%20%7C%20playwright%20%7C%20testing--library-blue)
+![Bun](https://img.shields.io/badge/bun-recommended-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## Development server
+Boilerplate para configurar y realizar testing en Angular 18+ utilizando **Standalone Components**. Incluye un entorno completo para pruebas unitarias, funcionales y end-to-end, optimizado para usar con **Bun**.
 
-To start a local development server, run:
+---
+
+## **Tabla de Contenidos**
+
+1. [Características](#características)
+2. [Tecnologías Usadas](#tecnologías-usadas)
+3. [Requisitos](#requisitos)
+4. [Instalación](#instalación)
+5. [Estructura del Proyecto](#estructura-del-proyecto)
+6. [Pruebas](#pruebas)
+7. [Configuración Adicional](#configuración-adicional)
+8. [Contribuir](#contribuir)
+9. [Licencia](#licencia)
+
+---
+
+## **Características**
+
+- **Angular 18+ Ready**: Soporte para Standalone Components, Signals y HttpClient.
+- **Testing con Jest**: Configuración completa para pruebas unitarias y funcionales.
+- **End-to-End con Playwright**: Flujo completo probado en navegadores reales.
+- **Testing Library**: Facilita pruebas funcionales basadas en interacción de usuario.
+- **Optimización con Bun**: Recomendado para instalar dependencias y ejecutar scripts rápidamente.
+- Incluye configuración predefinida para `HttpTestingController`.
+
+---
+
+## **Tecnologías Usadas**
+
+- **Angular 18+**: Framework base.
+- **Jest**: Testing framework para pruebas rápidas y fáciles.
+- **Playwright**: Framework para pruebas end-to-end.
+- **Testing Library**: Pruebas funcionales intuitivas.
+- **HttpClient Testing**: Para mockear y controlar solicitudes HTTP.
+- **Bun**: Alternativa moderna a Node.js para mayor velocidad.
+
+---
+
+## **Requisitos**
+
+- Node.js >= 18 o Bun >= 1.0
+- Angular CLI >= 18.0.0
+- Playwright CLI
+
+---
+
+## **Instalación**
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/tu-usuario/angular-testing-boilerplate.git
+   cd angular-testing-boilerplate
+   ```
+
+2. **Instalar dependencias con Bun (recomendado):**
+
+   ```bash
+   bun install
+   ```
+
+   O con npm:
+
+   ```bash
+   npm install
+   ```
+
+3. **Configurar Playwright (si aún no lo hiciste):**
+
+   ```bash
+   npx playwright install
+   ```
+
+4. **Levantar el servidor de desarrollo:**
+
+   ```bash
+   bun run ng serve
+   ```
+
+   O con npm:
+
+   ```bash
+   npm run start
+   ```
+
+## **Estructura del Proyecto**
 
 ```bash
-ng serve
+src/
+├── app/
+│   ├── Login/
+│   │   ├── login.component.ts # Componente de Login
+│   │   ├── login.component.spec.ts # Pruebas unitarias y funcionales
+│   ├── services/
+│   ├── auth.service.ts # Servicio de autenticación
+│   ├── auth.service.spec.ts # Pruebas unitarias del servicio
+├── e2e/
+│   ├── login.e2e.spec.ts # Pruebas end-to-end con Playwright
+├── functional/
+│   ├── login.functional.spec.ts # Pruebas funcionales con Playwright
+├── jest.config.js # Configuración de Jest
+├── playwright.config.ts # Configuración de Playwright
+├── setup-jest.ts # Configuración inicial de Jest
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## **Pruebas**
 
-## Code scaffolding
+### **Unitarias**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Pruebas de lógica interna de componentes y servicios utilizando Jest y HttpTestingController.
 
 ```bash
-ng generate component component-name
+bun run test
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O con npm:
 
 ```bash
-ng generate --help
+npm run test
 ```
 
-## Building
+### **Funcionales**
 
-To build the project run:
+Pruebas de interacción en el DOM con Testing Library.
 
 ```bash
-ng build
+bun run test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+O con npm:
 
 ```bash
-ng test
+npm run test
 ```
 
-## Running end-to-end tests
+### **End-to-End**
 
-For end-to-end (e2e) testing, run:
+Pruebas del flujo completo de la aplicación con Playwright.
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## **Integración con Playwright**
 
-## Additional Resources
+El proyecto incluye pruebas preconfiguradas en e2e/. Podés agregar más tests siguiendo el patrón en login.e2e.spec.ts.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## **Uso de Bun**
+
+Para ejecutar scripts más rápido, se recomienda usar bun. Asegurate de tener Bun instalado y configurado como gestor de paquetes.
+
+## **Contribuir**
+
+1. Realizá un fork del repositorio.
+2. Crea una rama para tu feature o bugfix:
+
+   ```bash
+   git checkout -b mi-feature
+   ```
+
+3. Enviá un pull request con tus cambios.
+
+## **Licencia**
+
+Este proyecto está bajo la Licencia MIT. Podés usarlo y modificarlo libremente.
