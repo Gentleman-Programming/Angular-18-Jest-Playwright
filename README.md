@@ -95,6 +95,10 @@ Boilerplate para configurar y realizar testing en Angular 18+ utilizando **Stand
 ## **Estructura del Proyecto**
 
 ```bash
+e2e/
+├── login.e2e.spec.ts # Pruebas end-to-end con Playwright
+functional/
+├── login.functional.spec.ts # Pruebas funcionales con Playwright
 src/
 ├── app/
 │   ├── Login/
@@ -103,10 +107,6 @@ src/
 │   ├── services/
 │   ├── auth.service.ts # Servicio de autenticación
 │   ├── auth.service.spec.ts # Pruebas unitarias del servicio
-├── e2e/
-│   ├── login.e2e.spec.ts # Pruebas end-to-end con Playwright
-├── functional/
-│   ├── login.functional.spec.ts # Pruebas funcionales con Playwright
 ├── jest.config.js # Configuración de Jest
 ├── playwright.config.ts # Configuración de Playwright
 ├── setup-jest.ts # Configuración inicial de Jest
