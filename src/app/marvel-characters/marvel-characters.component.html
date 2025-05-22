@@ -1,0 +1,27 @@
+<div class="characters-container">
+  <h2>Marvel Characters</h2>
+
+  @if (isLoading) {
+    <div class="loading">Loading characters...</div>
+  } @else if (errorMessage) {
+    <div class="error-message">
+      {{ errorMessage }}
+    </div>
+  } @else if (characters.length === 0) {
+    <div class="no-characters">
+      No characters found.
+    </div>
+  } @else {
+    <div class="characters-grid">
+      @for (character of characters; track character.id) {
+        <div class="character-card">
+          <img [src]="getThumbnailUrl(character)" [alt]="character.name" class="character-thumbnail">
+          <div class="character-info">
+            <h3>{{ character.name }}</h3>
+            <p class="character-description">{{ character.description || 'No description available.' }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

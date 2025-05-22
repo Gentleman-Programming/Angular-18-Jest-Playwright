@@ -1,0 +1,66 @@
+.characters-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .loading, .no-characters, .error-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 50px;
+  }
+
+  .error-message {
+    color: red;
+  }
+
+  .characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .character-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .character-thumbnail {
+      width: 100%;
+      height: 200px; // Ajusta según necesidad
+      object-fit: cover; // Mantiene la relación de aspecto, puede cortar un poco
+      // object-fit: contain; // Muestra toda la imagen, puede dejar espacios
+      display: block;
+    }
+
+    .character-info {
+      padding: 15px;
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        color: #2c3e50;
+      }
+
+      .character-description {
+        font-size: 0.9em;
+        color: #555;
+        height: 80px; // Altura fija para la descripción
+        overflow-y: auto; // Scroll si el texto es muy largo
+        line-height: 1.4;
+      }
+    }
+  }
+}
